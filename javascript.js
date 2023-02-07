@@ -1,7 +1,4 @@
 
-
-
-
 const getComputerChoice = (function() {
     result = Math.floor(Math.random() * 3);
     if (result === 0) {
@@ -16,11 +13,10 @@ const getComputerChoice = (function() {
     return result;
 });
 
-
+///////////////////////////////////////
 
 function playRound(playerSelection, computerSelection) {
     let result;
-    playerSelection = playerSelection.toUpperCase();
     
     if (computerSelection === "Paper" && playerSelection === "ROCK") {
         result = alert("You lose! Paper beats Rock")
@@ -28,7 +24,17 @@ function playRound(playerSelection, computerSelection) {
     return result;
 }
 
+///////////////////////////////////////
 
-const playerSelection = "Rock";
-const computerSelection = getComputerChoice();
-console.log((playRound(playerSelection, computerSelection)));
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        var playerSelection = prompt("What's your move, player?").toUpperCase();
+        const computerSelection = getComputerChoice();
+        playRound(playerSelection, computerSelection);
+    }
+}
+
+///////////////////////////////////////
+
+game();
